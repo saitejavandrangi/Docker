@@ -3,7 +3,7 @@ FROM ubuntu:latest
 
 #Adding Metadata (Tags)
 LABEL author="saitejavandrangi"
-LABEL application="orbital"
+LABEL application="wavecafe"
 LABEL environment="development"
 LABEL team="devops"
 
@@ -16,13 +16,13 @@ RUN apt install wget unzip apache2 -y
 
 
 #Download the Website Template
-RUN wget https://www.tooplate.com/zip-templates/2167_orbital.zip
+RUN wget https://www.tooplate.com/zip-templates/2121_wave_cafe.zip
 
 #Extract the Website Template
-RUN unzip 2167_orbital.zip
+RUN unzip 2121_wave_cafe.zip
 
 #Copy Website files to HTML Directory
-RUN cp -r 2167_orbital/* /var/www/html/
+RUN cp -r 2121_wave_cafe/* /var/www/html/
 
 #Expose this Application to Port 80
 EXPOSE 80
