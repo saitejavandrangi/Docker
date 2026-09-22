@@ -6,7 +6,7 @@ on:
       - branch1
 
 env:
-  IMAGE_NAME: wavecafe
+  IMAGE_NAME: orbital
 
 jobs:
   build-and-push:
