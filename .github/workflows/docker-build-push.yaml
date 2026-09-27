@@ -6,7 +6,7 @@ on:
       - branch1
 
 env:
-  IMAGE_NAME: docker pull nextkodeschool/wavecafe
+  IMAGE_NAME: wavecafe
 
 jobs:
   build-and-push:
