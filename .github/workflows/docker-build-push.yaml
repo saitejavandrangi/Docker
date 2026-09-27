@@ -1,5 +1,5 @@
 name: Docker Build and Push
-
+# this workflow
 on:
   push:
     branches:
@@ -10,26 +10,31 @@ env:
 
 jobs:
   build-and-push:
-    name: Build And Push Images
+    name: Build and Push Docker Image to DockerHub
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Download source code from GitHub
-      - name: Checkout repository
+
+      # Step 1: Checkout source code
+      - name: Checkout Code
         uses: actions/checkout@v4
 
+      # Step 2: Login to Docker Hub
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build docker image
+      # Step 3: Build Docker image
+      - name: Build Docker Image
         run: |
           docker build \
             -t ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest .
+            
 
-      - name: Push image to Docker Hub
+      # Step 4: Push Docker image to Docker Hub
+      - name: Push Docker Image
         run: |
           docker push \
             ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
