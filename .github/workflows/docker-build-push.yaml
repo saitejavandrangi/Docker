@@ -6,7 +6,7 @@ on:
       - docker_practise
 
 env:
-  IMAGE_NAME: studio
+  IMAGE_NAME: wavecafe
 
 jobs:
   build-and-push:
